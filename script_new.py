@@ -11,19 +11,19 @@ SCOPES = [
         "https://www.googleapis.com/auth/gmail.send"
     ]
 flow = InstalledAppFlow.from_client_secrets_file(
-            'sibasis_creds.json', SCOPES)
+            'credentials.json', SCOPES)
 creds = flow.run_local_server(port=0)
 service = build('gmail', 'v1', credentials=creds)
-from_email = 'sibasis@ignitebong.de'
+from_email = '<EMAIL_SENDER@gmail.com>'
 
 # Email content
-subject = 'Indian Summer Fest, Berlin - 13th July 2024'
+subject = '<EMAIL_CONTENT>'
 
 # Read the HTML template
 
 
 # Read the Excel file
-file_path = 'batch_3.xlsx'  # Path to your Excel file
+file_path = '<EXCEL_FILE>.xlsx'  # Path to your Excel file
 contacts = pd.read_excel(file_path)
 
 
@@ -32,7 +32,7 @@ contacts = pd.read_excel(file_path)
 for index, row in contacts.iterrows():
     to_name = row['Name']
     to_email = row['Email']
-    with open('template.html', 'r') as file:
+    with open('<PATH_TO_EMAIL_BODY_TEMPLATE>.html', 'r') as file:
         html_template = file.read().replace('{name}', to_name)
     html_message = MIMEText(html_template, 'html')
     html_message['To'] = to_email
