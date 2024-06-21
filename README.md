@@ -5,12 +5,12 @@ The script utilises the Gmail API available over Oauth Authentication libraries 
 
 ## Prerequisites
 
-Google Workspace Admin
-Google Project creation for the account (Sender)
-Google GMAIL API scoped credentials creation from the Google Project.
+- Google Workspace Admin
+- Google Project creation for the account (Sender)
+- Google GMAIL API scoped credentials creation from the Google Project.
 
-HTML with the formatted body and content 
-Excel Sheet with two columns (Mandatory) `Name` and `Email` case-sensitive. (Name should be first name)
+- HTML with the formatted body and content 
+- Excel Sheet with two columns (Mandatory) `Name` and `Email` case-sensitive. (Name should be first name)
 
 
 ## Install
